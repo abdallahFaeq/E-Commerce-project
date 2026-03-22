@@ -13,8 +13,21 @@ class MainActivity : AppCompatActivity() {
                 setKeepOnScreenCondition {
                     viewModel.isLoading.value
                 }
+                setOnExitAnimationListener{splashView->
+                    splashView.view.animate()
+                        .alpha(0f)
+                        .scaleX(1.1f)
+                        .scaleY(1.1f)
+                        .rotation(360.0f)
+                        .setDuration(400)
+                        .withEndAction{
+                            splashView.remove()
+                        }
+                        .start()
+                }
             }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
     }
 }
