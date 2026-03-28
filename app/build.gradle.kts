@@ -37,6 +37,11 @@ android {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
         }
     }
+
+    buildFeatures{
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -69,5 +74,7 @@ dependencies {
 
     // Reactive Network library to listen network connectivity
     implementation("com.github.pwittchen:reactivenetwork-rx2:3.0.8")
+
+
 
 }
