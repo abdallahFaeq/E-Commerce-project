@@ -15,6 +15,7 @@ object CrashlyticsUtils {
         FirebaseCrashlytics.getInstance().recordException(CustomCrashlyticsLogException(mess))
     }
 
+    /*
     fun sendLogToCrashlytics(
         mess: String, vararg keys: Pair<String, String>
     ) {
@@ -23,6 +24,8 @@ object CrashlyticsUtils {
         }
         FirebaseCrashlytics.getInstance().recordException(CustomCrashlyticsLogException(mess))
     }
+     */
+
 
     inline fun <reified T : Exception> sendLogToCrashlytics(
         mess: String, vararg keys: Pair<String, String>
@@ -31,7 +34,6 @@ object CrashlyticsUtils {
             FirebaseCrashlytics.getInstance().setCustomKey(key.first, key.second)
         }
         val exception = T::class.java.getConstructor(String::class.java).newInstance(mess)
-
         FirebaseCrashlytics.getInstance().recordException(exception)
     }
 }
