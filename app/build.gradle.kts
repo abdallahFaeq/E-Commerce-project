@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -75,6 +76,16 @@ dependencies {
     // Reactive Network library to listen network connectivity
     implementation("com.github.pwittchen:reactivenetwork-rx2:3.0.8")
 
+    // navigation component library
+    // Views/Fragments integration
+    val nav_version = "2.9.7"
+    implementation("androidx.navigation:navigation-fragment:${nav_version}")
+    implementation("androidx.navigation:navigation-ui:${nav_version}")
+
+    // sdp
+    implementation("com.intuit.sdp:sdp-android:1.1.1")
+    // ssp
+    implementation ("com.intuit.ssp:ssp-android:1.1.1")
 
 
 }
