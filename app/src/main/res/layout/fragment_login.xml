@@ -85,7 +85,7 @@
                     app:layout_constraintTop_toBottomOf="@id/email_text"/>
 
                 <Button
-                    android:id="@+id/signt_in_btn"
+                    android:id="@+id/sign_in_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/sign_in"
@@ -107,7 +107,7 @@
                     android:layout_height="@dimen/_1sdp"
                     app:layout_constraintTop_toTopOf="@id/or_label"
                     app:layout_constraintBottom_toBottomOf="@id/or_label"
-                    app:layout_constraintStart_toStartOf="@id/signt_in_btn"
+                    app:layout_constraintStart_toStartOf="@id/sign_in_btn"
                     app:layout_constraintEnd_toStartOf="@id/or_label"/>
                 <TextView
                     android:id="@+id/or_label"
@@ -120,14 +120,14 @@
                     android:textSize="@dimen/_12ssp"
                     android:letterSpacing=".031"
                     app:layout_constraintStart_toEndOf="@id/left_line"
-                    app:layout_constraintTop_toBottomOf="@id/signt_in_btn"
+                    app:layout_constraintTop_toBottomOf="@id/sign_in_btn"
                     app:layout_constraintEnd_toStartOf="@id/right_line"/>
                 <View
                     android:id="@+id/right_line"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_1sdp"
                     app:layout_constraintStart_toEndOf="@id/or_label"
-                    app:layout_constraintEnd_toEndOf="@id/signt_in_btn"
+                    app:layout_constraintEnd_toEndOf="@id/sign_in_btn"
                     app:layout_constraintTop_toTopOf="@id/or_label"
                     app:layout_constraintBottom_toBottomOf="@id/or_label"/>
 
