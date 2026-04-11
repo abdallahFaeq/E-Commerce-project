@@ -5,13 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.training.ecommercetrainingproject.R
+import com.training.ecommercetrainingproject.data.repos.user.UserPreferencesRepositoryImpl
+import com.training.ecommercetrainingproject.data.sources.datastore.AppPreferencesDataSource
 import com.training.ecommercetrainingproject.databinding.FragmentLoginBinding
+import com.training.ecommercetrainingproject.ui.common.UserViewModel
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding ?= null
     private val binding get() = _binding!!
+
+    private val viewModel: UserViewModel by lazy {
+        UserViewModel(
+            userPreferencesRepository = UserPreferencesRepositoryImpl(
+                AppPreferencesDataSource(requireContext())
+            )
+        )
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,6 +35,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.saveLoginState(true)
 
         binding.registerLabel.setOnClickListener {
             navigateToRegisterFragment()
