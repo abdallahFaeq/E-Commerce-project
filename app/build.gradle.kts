@@ -72,10 +72,13 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     // Crashlytics SDK
     implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-auth")
 
     // Reactive Network library to listen network connectivity
     implementation("com.github.pwittchen:reactivenetwork-rx2:3.0.8")
 
+    // datasotre
+    implementation("androidx.datastore:datastore-preferences:1.2.1")
     // navigation component library
     // Views/Fragments integration
     val nav_version = "2.9.7"
